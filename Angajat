@@ -1,0 +1,35 @@
+class Angajat:
+    def __init__(self, nume, prenume, salariu):
+        self.nume = nume
+        self.prenume = prenume
+        self.salariu = salariu
+
+    def descrie(self):
+        return f"{self.nume} {self.prenume} are un salariu de {self.salariu} RON."
+
+    def nume_complet(self):
+        return f"{self.nume} {self.prenume}"
+
+    def salariu_lunar(self):
+        return self.salariu
+
+    def salariu_anual(self):
+        return self.salariu * 12
+
+    def marire_salariu(self, procent):
+        self.salariu *= (1 + procent / 100)
+
+
+# Exemplu de utilizare:
+angajat1 = Angajat("Popescu", "Ion", 3000)
+
+print(angajat1.descrie())  # Output: Popescu Ion are un salariu de 3000 RON.
+print(angajat1.nume_complet())  # Output: Popescu Ion
+print(angajat1.salariu_lunar())  # Output: 3000
+print(angajat1.salariu_anual())  # Output: 36000
+
+angajat1.marire_salariu(10)
+print(angajat1.salariu_lunar())  # Output: 3300
+În acest exemplu, am creat clasa Angajat cu atributele nume, prenume și salariu. Am definit un constructor __init__ care primește aceste atribute și le atribuie obiectului. Apoi, am implementat metodele descrie, nume_complet, salariu_lunar, salariu_anual și marire_salariu conform specificațiilor.
+
+În exemplul de utilizare, am creat un obiect angajat1 cu numele "Popescu", prenumele "Ion" și un salariu de 3000 RON. Am apelat apoi metodele respective pentru a obține informații despre angajat și pentru a efectua o majorare a salariului cu 10%.
